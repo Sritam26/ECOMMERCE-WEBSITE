@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-           response.sendRedirect("index.jsp");
+           response.sendRedirect("multishop/Landing.jsp");
   // Redirect to homepage after successful login
         } else {
             response.sendRedirect("login.jsp?error=true");  // Redirect back to login with error message
