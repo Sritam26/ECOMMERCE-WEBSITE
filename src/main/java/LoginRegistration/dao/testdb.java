@@ -3,7 +3,7 @@ import java.sql.*;
 public class testdb {
 	 private static final String jdbcURL = "jdbc:mysql://localhost:3306/ecommerce_db";
 	    private static final String jdbcUsername = "root";
-	    private static final String jdbcPassword = "s1r2i3t4a5m";
+	    private static final String jdbcPassword = "Amiya@2002";
 
 	    public static void main(String[] args) {
 	        try {
