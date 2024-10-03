@@ -6,7 +6,7 @@ import UserModel.User;
 public class Userdao {
     private String jdbcURL = "jdbc:mysql://localhost:3306/ecommerce_db";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "s1r2i3t4a5m";
+    private String jdbcPassword = "Amiya@2002";
 
     private static final String INSERT_USER_SQL = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
     private static final String SELECT_USER_BY_EMAIL_AND_PASSWORD = "SELECT * FROM users WHERE email = ? AND password = ?";
