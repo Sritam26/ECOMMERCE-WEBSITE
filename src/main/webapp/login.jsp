@@ -27,6 +27,9 @@
 						</figure>
 						<a href="registration.jsp" class="signup-image-link">Create an
 							account</a>
+					<a href="Login_v2/adminlogin.jsp" class="signup-image-link">
+							Seller login</a>
+							
 					</div>
 
 					<div class="signin-form">
@@ -55,17 +58,7 @@
 									class="form-submit" value="login" />
 							</div>
 						</form>
-						<div class="social-login">
-							<span class="social-label">Or login with</span>
-							<ul class="socials">
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-google"></i></a></li>
-							</ul>
-						</div>
+						
 					</div>
 				</div>
 			</div>
