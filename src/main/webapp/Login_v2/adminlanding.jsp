@@ -14,6 +14,7 @@
     
     <!-- Main CSS -->
     <style>
+        /* Same styles as before */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -102,7 +103,7 @@
             gap: 20px;
         }
 
-        .form-container form input, .form-container form textarea {
+        .form-container form input, .form-container form textarea, .form-container form select {
             width: 100%;
             padding: 12px;
             font-size: 16px;
@@ -112,7 +113,7 @@
             transition: border-color 0.3s ease-in-out;
         }
 
-        .form-container form input:focus, .form-container form textarea:focus {
+        .form-container form input:focus, .form-container form textarea:focus, .form-container form select:focus {
             border-color: #5c67f2;
         }
 
@@ -188,14 +189,15 @@
         <!-- Add Product Section -->
         <div id="add-product" class="form-container">
             <h2>Add New Product</h2>
-            <form method="POST" action="addProduct" enctype="multipart/form-data">
+            <form method="POST" action="${pageContext.request.contextPath}/addproduct" enctype="multipart/form-data">
+
                 <div class="form-group">
                     <label for="product-id">Product ID</label>
-                    <input type="text" name="product-id" id="product-id" placeholder="Enter Product ID" required>
+                    <input type="text" name="product_id" id="product-id" placeholder="Enter Product ID" required>
                 </div>
                 <div class="form-group">
                     <label for="product-name">Product Name</label>
-                    <input type="text" name="product-name" id="product-name" placeholder="Enter Product Name" required>
+                    <input type="text" name="product_name" id="product-name" placeholder="Enter Product Name" required>
                 </div>
                 <div class="form-group">
                     <label for="price">Price</label>
@@ -203,12 +205,36 @@
                 </div>
                 <div class="form-group">
                     <label for="product-description">Product Description</label>
-                    <textarea name="product-description" id="product-description" rows="4" placeholder="Enter Product Description"></textarea>
+                    <textarea name="description" id="product-description" rows="4" placeholder="Enter Product Description"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="product-picture">Product Picture</label>
-                    <input type="file" name="product-picture" id="product-picture" required>
+                    <label for="image_url">Image URL:</label>
+                    <input type="url" id="product-picture" name="product-picture" placeholder="https://example.com/image.jpg" required>
                 </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" name="quantity" id="quantity" placeholder="Enter quantity" required>
+                </div>
+                
+                <!-- Product Category Dropdown -->
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="menswear">Menswear</option>
+                        <option value="womenswear">Womenswear</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="home-essentials">Home Essentials</option>
+                        <option value="kidswear">kidswear</option>
+                         <option value="smartphones">smartphones</option>
+                         <option value="ladiesgrooming">ladiesgrooming</option>
+                        <option value="mensgrooming">mensgrooming</option>
+                        <option value="mensfootwear">mensfootwear</option>
+                        <option value="ladiesfootwear">ladiesfootwear</option>
+                        
+                    </select>
+                </div>
+
                 <button type="submit">Add Product</button>
             </form>
         </div>
@@ -225,7 +251,7 @@
             </form>
         </div>
 
-        <!-- View Products Section -->
+        <!-- View All Products Section -->
         <div id="view-products" class="form-container">
             <h2>All Products</h2>
             <table class="product-table">
@@ -235,28 +261,32 @@
                         <th>Product Name</th>
                         <th>Price</th>
                         <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Category</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Example of product rows, dynamically rendered -->
+                    <!-- Sample products (you can populate this dynamically using JSP or JavaScript) -->
                     <tr>
                         <td>001</td>
-                        <td>Product A</td>
-                        <td>$20</td>
-                        <td>A sample product</td>
+                        <td>Blue Shirt</td>
+                        <td>$25.00</td>
+                        <td>Cotton shirt for men</td>
+                        <td>50</td>
+                        <td>Menswear</td>
                     </tr>
                     <tr>
                         <td>002</td>
-                        <td>Product B</td>
-                        <td>$50</td>
-                        <td>Another sample product</td>
+                        <td>Smartphone</td>
+                        <td>$499.99</td>
+                        <td>Latest Android phone</td>
+                        <td>30</td>
+                        <td>Electronics</td>
                     </tr>
-                    <!-- More products would go here -->
                 </tbody>
             </table>
         </div>
 
     </div>
-
 </body>
 </html>
